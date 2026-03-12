@@ -1,5 +1,69 @@
 .App {
   text-align: center;
+  background: linear-gradient(180deg, #000, #222);
+  color: #eee;
+}
+
+/* button and input styles from user specification */
+button {
+  font-size: 1.4em;
+  padding: 0.6em 0.8em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px #000000b4;
+}
+
+.container {
+  position: relative;
+  padding: 3px;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  border-radius: 0.9em;
+  transition: all 0.4s ease;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 0.9em;
+  z-index: -10;
+  filter: blur(0);
+  transition: filter 0.4s ease;
+}
+
+.container:hover::before {
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  filter: blur(1.2em);
+}
+
+.container:active::before {
+  filter: blur(0.2em);
+}
+
+.input {
+  margin-top: 1rem;
+  border-radius: 10px;
+  outline: 2px solid #00a6fb;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #d6f1ff;
+  outline-offset: 3px;
+  padding: 10px 12.5px;
+  transition: all 0.2s ease;
+  width: 250px;
+}
+
+.input:hover {
+  background-color: #fff;
+}
+
+.input:focus {
+  outline-offset: -6px;
+  background-color: #d6f1ff;
 }
 
 .App-logo {
@@ -14,7 +78,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #20232a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,6 +96,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
